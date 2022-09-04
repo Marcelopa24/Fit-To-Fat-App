@@ -1,0 +1,28 @@
+body{
+    background-image: url("images/home.webp") ;
+    background-size:100%;
+    background-repeat:repeat-y;
+}
+
+#fond{
+    background-image: url("images/fit.jpg");
+    background-size: 100%;
+    background-position-y:15%;
+    /*filter: brightness(75%);*/
+    border-color: #00ff00;
+    
+}
+
+#fon{
+    background-image: url("images/fit.jpg");
+    background-size: 100%;
+    background-position-y:60%;
+    
+}
+
+#fond2{
+    background-image: url("images/fit.jpg");
+    background-size: 100%;
+    background-position-y:45%;
+    
+}

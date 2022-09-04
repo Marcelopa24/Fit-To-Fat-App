@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/images/logo.png" alt="">
+</body>
+</html>
+
+<div class="p-3 mb-2 bg-dark bg-gradient text-white border border-3 border-success rounded-3">
+    <div class="d-flex flex-row mb-3 justify-content-start">
+        <div>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="img-fluid" width="120px" height="120px">
+        </div>
+        <div class= "col-11 d-flex justify-content-between align-items-center">
+            <h1>Hello {{ user.first_name }}</h1>
+            <a href="/logout"><h6>Log out</h6></a>
+        </div>
+    </div>
+    <h3 class="ms-6 ps-5">Create your daily routine</h3>
+</div>
+-----------------
+<header class="d-flex justify-content-between align-items-center">
+    <h1>Hello {{user.first_name }}</h1>
+    <a href="/logout"><h5>Log out</h5></a>
+</header>
+
+<a href="/appointment/add"><h6>Add new daily exercices </h6></a>
+
+
+@staticmethod
+def validate_appointment(data):
+    #today = datetime.now()
+    is_valid = True
+
+    if data['status'] == "":
+        flash('* The Day must not be empty', 'appointments')
+        is_valid = False
+
+    if len(data['task']) < 3:
+        flash('* The Description must not be empty', 'appointments')
+        is_valid = False
+
+    today = datetime.now()
+    is_valid = True
+    date_today = datetime.strptime(data['date'], '%Y-%m-%d')
+    print(date_today)
+    print(today)
+
+    if date_today < today:
+        flash('* Incorrect Date validation', 'appointments')
+        is_valid = False
+
+    return is_valid
+
+    bg-dark bg-gradient
+
+    #00ff00
+
+    {{ ['user_id'] }}
+
+    ps-2 pe-2
